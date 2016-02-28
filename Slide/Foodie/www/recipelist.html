@@ -19,10 +19,21 @@
         <ion-item>
           <div ng-repeat="r in result" class="row">
             <div class="col col-50">
-              <img class="full-image" ng-src="http://{{r.imageUrl}}">
+
+              <div class="recipe-list-info">
+                <div>some item</div>
+                <div>some cost</div>
+              </div>
+              <img class="full-image recipe-img" ng-src="http://{{r.a.imageUrl}}">
             </div>
             <div class="col col-50">
-              <img class="full-image" ng-src="http://{{r.imageUrl}}">
+              <div class="recipe-list-info">
+                <div>some other 2</div>
+                <div>some other 2</div>
+              </div>
+
+              <img class="full-image recipe-img" ng-src="http://{{r.b.imageUrl}}">
+
             </div>
           </div>
         </ion-item>
