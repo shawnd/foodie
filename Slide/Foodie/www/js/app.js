@@ -1,4 +1,4 @@
-var app = angular.module('slidebox', ['ionic', 'tabSlideBox'])
+var app = angular.module('slidebox', ['ionic', 'tabSlideBox','slidebox.services', 'slidebox.controllers'])
     .run(['$q', '$http', '$rootScope', '$location', '$window', '$timeout',
         function($q, $http, $rootScope, $location, $window, $timeout) {
 
@@ -42,19 +42,20 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise("/");
 });
-app.controller("IndexCtrl", ['$rootScope', "$scope",
-    "$stateParams", "$q", "$location", "$window", '$timeout',
-    function($rootScope, $scope, $stateParams, $q, $location, $window,
-        $timeout) {
-        $scope.tabs = [{
-            "text": "History"
-        }, {
-            "text": "Current Meals"
-        }, {
-            "text": "Favorites"
-        }];
-        $scope.onSlideMove = function(data) {
-            //alert("You have selected " + data.index + " tab");
-        };
-    }
-]);
+// app.controller("IndexCtrl", ['$rootScope', "$scope",
+//     "$stateParams", "$q", "$location", "$window", '$timeout',
+//     function($rootScope, $scope, $stateParams, $q, $location, $window,
+//         $timeout, UserHistory) {
+//         $scope.tabs = [{
+//             "text": "History"
+//         }, {
+//             "text": "Current Meals"
+//         }, {
+//             "text": "Favorites"
+//         }];
+//         // $scope.uHistory = UserHistory.all();
+//         $scope.onSlideMove = function(data) {
+//             //alert("You have selected " + data.index + " tab");
+//         };
+//     }
+// ]);
