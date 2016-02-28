@@ -83,3 +83,6 @@
     margin-left: auto !important;
     margin-right: auto !important;
 }
+.recipe-img{
+     -webkit-filter: brightness(40%); 
+}
