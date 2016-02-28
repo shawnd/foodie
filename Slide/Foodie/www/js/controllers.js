@@ -58,4 +58,22 @@ angular.module('slidebox.controllers', [])
     	console.log($stateParams.id);
         $scope.recipe = Recipes.get($stateParams.id);
     }
+])
+
+.controller("RecipeListCtrl", ['Recipes', '$scope', '$stateParams',
+  function(Recipes, $scope, $stateParams) {
+    var budget = 20;
+    
+    console.log(budget);
+    var recipes = Recipes.all();
+    var result = []
+    for (var i= 0, n=recipes.length; i<n; i++){
+      if (recipes[i].totalPrice < budget && recipes[i].totalPrice != 0) {
+        result.push(recipes[i]);
+      }
+    }
+
+    console.log(result);
+
+  }
 ]);

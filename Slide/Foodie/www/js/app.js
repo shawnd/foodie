@@ -43,7 +43,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
     });
     $stateProvider.state('recipelist', {
         url: '/recipelist',
-        templateUrl: 'recipelist.html'
+        templateUrl: 'recipelist.html',
+        controller: 'RecipeListCtrl'
     });
     $stateProvider.state('settings', {
         url:'/settings',
