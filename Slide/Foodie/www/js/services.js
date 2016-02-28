@@ -25,8 +25,6 @@ angular.module('slidebox.services', [])
     get: function(Id) {
       return history[Id];
     }
-      return null;
-    }
   };
 });
 console.log("WHAT");
