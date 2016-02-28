@@ -41,7 +41,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
         url: '/grocerylist',
         templateUrl: 'groceries.html'
     });
-
+    $stateProvider.state('recipelist', {
+        url: '/recipelist',
+        templateUrl: 'recipelist.html'
+    });
     $stateProvider.state('settings', {
         url:'/settings',
         templateUrl: 'settings.html'
