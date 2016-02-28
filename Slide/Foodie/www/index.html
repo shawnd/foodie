@@ -89,13 +89,16 @@
                           <div class="card">
                             <a href="#/search" class="item item-icon-left">
                               <i class="icon ion-plus" style="color:#74CF66 !important;    font-size: 22px;"></i>
-                              <span style="color:#74CF66 !important;font-weight:bold;">Add a meal</span>
-                              <span class="badge badge-clear" style="color:#74CF66;">Budget $10</span>
+                              <div style="color:#74CF66 !important;font-weight:bold;text-align:left;">Add a meal</div>
+                              <div class="badge badge-clear" style="color:#74CF66;">Budget $10</div>
                             </a>
                               <ion-scroll>
                                 <ion-list>
                                   <ion-item href="#/recipe" ng-repeat="item in uCart">
                                     The most beautiful recipe of all time.
+                                  </ion-item>
+                                  <ion-item>
+                                    <div class="recipe-total"><div style="text-align:left;float:left;">Total:</div> <div style="text-align:right">$0.00</div></div>
                                   </ion-item>
                                 </ion-list>
                               </ion-scroll>

@@ -46,6 +46,14 @@
     color:black !important;
     padding-left: 45px;
 }
+
+.recipe-total{
+    font-size: 12.5px !important;
+    text-decoration: none !important;
+    text-align: right;
+    font-weight: 500 !important;
+    color:black !important;
+}
 .card{
 	    margin-top: 15px;
 }
