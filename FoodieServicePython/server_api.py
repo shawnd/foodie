@@ -55,4 +55,14 @@ def getRecipesBudget():
         r = requests.get('https://peaceful-lowlands-66729.herokuapp.com/budget/100')
         print json.dumps(r.json())
         return json.dumps(r.json())
+
+@route('/getSaved')
+def getSaved():
+        rq_id = request.query.id
+        result = firebase.get('/users/'+rq_id,'saved')
+        #append history id's
+        r = requests.get('https://peaceful-lowlands-66729.herokuapp.com/recipes/3,4')
+        print json.dumps(r.json())
+        return json.dumps(r.json())
+
 main()

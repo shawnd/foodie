@@ -9,3 +9,22 @@
  .tabbed-slidebox .tsb-icons:after{
  display:none;
  }
+ ion-header-bar{
+ 	background-color:#74CF66 !important;
+ 	border-color: #74CF66 !important;
+ }
+ .title {
+    font-family: arial !important;
+    letter-spacing: 2px !important;
+    font-weight: lighter !important;
+    padding-top:2px !important;
+}
+.recipe-title {
+    font-size: 12.5px !important;
+    text-decoration: none !important;
+    text-align: left;
+    font-weight: 500 !important;
+}
+.recipe-link{
+	text-decoration:none !important;
+}
