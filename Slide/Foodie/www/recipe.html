@@ -2,15 +2,17 @@
     <ion-content scroll="false">
         <div class="list card">
           <div class="item item-avatar">
-            <img src="mcfly.jpg">
             <h2>{{recipe.name}}</h2>
             <p>{{recipe.totalTime}}</p>
           </div>
 
           <div class="item item-body">
-            <img class="full-image" src="delorean.jpg">
+            <img class="full-image" ng-src="http://{{recipe.imageUrl}}"">
             <p>
               {{recipe.directions}}
+            </p>
+            <p>
+              {{recipe.ingredientArrayName}}
             </p>
             <p>
               <a href="#" class="subdued">1 Like</a>
