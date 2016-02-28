@@ -42,6 +42,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'groceries.html'
     });
 
+    $stateProvider.state('settings', {
+        url:'/settings',
+        templateUrl: 'settings.html'
+    });
+
     $urlRouterProvider.otherwise("/");
 });
 // app.controller("IndexCtrl", ['$rootScope', "$scope",
