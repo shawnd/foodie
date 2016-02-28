@@ -81,6 +81,14 @@ angular.module('slidebox.controllers', [])
     }
 ])
 
+
+.controller("discoverCtrl", ['Recipes', '$scope', '$stateParams',
+    function(Recipes, $scope, $stateParams) {
+        console.log($stateParams.id);
+        $scope.recipe = Recipes.get($stateParams.id);
+    }
+])
+
 .controller("GroceryCtrl", ['Recipes', 'Cart', 'Ingredients', '$scope', 
     function(Recipes, Cart, Ingredients, $scope){
         console.log("GROCERY");

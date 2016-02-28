@@ -42,11 +42,19 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'groceries.html',
         controller: 'GroceryCtrl'
     });
+
     $stateProvider.state('recipelist', {
         url: '/recipelist',
         templateUrl: 'recipelist.html',
         controller: 'RecipeListCtrl'
     });
+
+        $stateProvider.state('discover', {
+        url: '/discover',
+        templateUrl: 'discover.html',
+        controller: 'discoverCtrl'
+    });
+
     $stateProvider.state('settings', {
         url:'/settings',
         templateUrl: 'settings.html'
