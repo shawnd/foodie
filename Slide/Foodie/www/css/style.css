@@ -9,9 +9,10 @@
  .tabbed-slidebox .tsb-icons:after{
  display:none;
  }
+
  ion-header-bar{
- 	background-color:#74CF66 !important;
- 	border-color: #74CF66 !important;
+ 	background-color:rgb(115,102,207) !important;
+ 	border-color: rgb(115,102,207) !important;
  }
  .title {
     font-family: arial !important;
@@ -27,4 +28,18 @@
 }
 .recipe-link{
 	text-decoration:none !important;
+}
+
+.recipe-time{
+	text-align:left;
+	font-size:11px !important;
+}
+
+.recipe-price{
+    font-size: 12.5px !important;
+    text-decoration: none !important;
+    text-align: right;
+    font-weight: 500 !important;
+    color:black !important;
+    padding-left: 45px;
 }

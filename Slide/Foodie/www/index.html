@@ -54,8 +54,11 @@
                               <ion-list>
                                 <ion-item class="item" ng-repeat="hist in uHistory">                               
                                   <div class="row">
-                                    <a class="col col-75 recipe-link" href="#/recipe/{{hist.$$hashKey}}"><h2 class="recipe-title">{{hist.name}}</h2><p>{{hist.totalTime}}</p></a>
-                                    <div class="col"><i class="icon ion-plus" style="position: absolute; right: 2em; top:35%"></i></div>
+                                    <div class="recipe-plus-button"><i class="icon ion-plus" style="float: left; padding-top: 3px; color: rgb(203, 203, 203); padding-right: 5px;"></i></div>
+                                    <a class="col col-75 recipe-link" href="#/recipe/{{hist.$$hashKey}}"><h2 class="recipe-title">{{hist.name}}</h2><p class="recipe-time">{{hist.totalTime}} | {{hist.ingredientArrayName[0]}} {{hist.ingredientArrayName[1]}} {{hist.ingredientArrayName[2]}}</p></a>
+                                    <div class="recipe-price">
+                                          ${{hist.totalPrice}}
+                                    </div>
                                   </div>
                                 </ion-item>
                               </ion-list>
