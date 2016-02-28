@@ -15,7 +15,6 @@ user_template = {"fav_cuisine": "", "password": "", "planning": '', "user_name":
 from firebase import firebase
 firebase = firebase.FirebaseApplication('https://boiling-heat-7995.firebaseio.com')
 
-
 def main():
         print "Starting bottle server"
         run(host='localhost', port=8080)
