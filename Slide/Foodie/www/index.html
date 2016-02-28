@@ -117,7 +117,22 @@
                         </div>
                           <div class="card">
                             <ion-scroll style="height:100%">
+                            <ion-item> <div style="text-align:left">Your Favourites</div></ion-item>
                               <ion-list>
+
+                                <ion-item class="item" style="" ng-repeat="favs in uFavorites">                               
+                                  <div class="row">
+                                    <a ng-click="addItem(favs.index)" class="recipe-plus-button"><i class="icon ion-plus" style="float: left; padding-top: 3px; color: rgb(203, 203, 203); padding-right: 5px;"></i></a>
+                                    <a class="col col-75 recipe-link" href="#/recipe/{{favs.index}}"><h2 class="recipe-title">{{favs.name}}</h2><p class="recipe-time">{{favs.totalTime}} | {{favs.ingredientArrayName[0]}} {{favs.ingredientArrayName[1]}} {{favs.ingredientArrayName[2]}}</p></a>
+                                    <div class="recipe-price">
+                                          ${{favs.totalPrice}}
+                                    </div>
+                                  </div>
+                                </ion-item>
+                              </ion-list>
+                                                         <ion-item> <div style="text-align:left">Doug Favourites</div></ion-item>
+                              <ion-list>
+
                                 <ion-item class="item" style="" ng-repeat="favs in uFavorites">                               
                                   <div class="row">
                                     <a ng-click="addItem(favs.index)" class="recipe-plus-button"><i class="icon ion-plus" style="float: left; padding-top: 3px; color: rgb(203, 203, 203); padding-right: 5px;"></i></a>
