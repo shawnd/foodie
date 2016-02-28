@@ -21,15 +21,15 @@
             <div class="col col-50">
 
               <div class="recipe-list-info">
-                <div>{{r.a.name}}</div>
-                <div>{{r.a.totalPrice}}</div>
+                <div class="recipe-name">{{r.a.name}}</div>
+                <div class="recipe-price-list">${{r.a.totalPrice}}</div>
               </div>
               <img class="full-image recipe-img" ng-src="http://{{r.a.imageUrl}}">
             </div>
             <div class="col col-50">
               <div class="recipe-list-info">
-                <div>{{r.b.name}}</div>
-                <div>{{r.b.totalPrice}}</div>
+                <div class="recipe-name">{{r.b.name}}</div>
+                <div class="recipe-price-list">${{r.b.totalPrice}}</div>
               </div>
 
               <img class="full-image recipe-img" ng-src="http://{{r.b.imageUrl}}">

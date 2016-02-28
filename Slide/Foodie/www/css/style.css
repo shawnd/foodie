@@ -92,7 +92,17 @@
     position: absolute;
     color: white;
     margin-left: 1%;
-    margin-top: 13%;
+    margin-top: 17%;
     width: 50px;
 
+}
+
+.recipe-name{
+    font-size:12px;
+}
+
+.recipe-price-list{
+    font-size: 12px;
+    text-align: center;
+    margin-left: 74px;
 }
