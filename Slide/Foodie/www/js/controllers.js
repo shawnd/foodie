@@ -63,7 +63,7 @@ angular.module('slidebox.controllers', [])
 .controller("RecipeListCtrl", ['Recipes', '$scope', '$stateParams',
   function(Recipes, $scope, $stateParams) {
     var budget = 20;
-    
+
     console.log(budget);
     var recipes = Recipes.all();
     var result = []
@@ -74,6 +74,7 @@ angular.module('slidebox.controllers', [])
     }
 
     console.log(result);
+    $scope.result = result;
 
   }
 ]);
