@@ -22,12 +22,9 @@ angular.module('slidebox.services', [])
     remove: function(chat) {
       history.splice(history.indexOf(chat), 1);
     },
-    get: function(chatId) {
-      for (var i = 0; i < history.length; i++) {
-        if (history[i].id === parseInt(chatId)) {
-          return history[i];
-        }
-      }
+    get: function(Id) {
+      return history[Id];
+    }
       return null;
     }
   };

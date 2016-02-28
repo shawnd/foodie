@@ -52,12 +52,12 @@
                           <div class="card">
                             <ion-scroll>
                               <ion-list>
-                                <a class="item" collection-repeat="hist in uHistory">                               
+                                <ion-item class="item" ng-repeat="hist in uHistory">                               
                                   <div class="row">
-                                    <a class="col col-75" href="#/recipe"><h2>cabbage</h2><p>A beautiful cabbage tart.</p></a>
+                                    <a class="col col-75" href="#/recipe/{{hist.$$hashKey}}"><h2>{{hist.name}}</h2><p>{{hist.totalTime}}</p></a>
                                     <div class="col"><i class="icon ion-plus" style="position: absolute; right: 2em; top:35%"></i></div>
                                   </div>
-                                </a>
+                                </ion-item>
                               </ion-list>
                             </ion-scroll>
                           </div>

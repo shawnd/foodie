@@ -14,10 +14,16 @@ angular.module('slidebox.controllers', [])
         // 	console.log("LOL");
         // }
     	$scope.uHistory = UserHistory.all();
-    	
+
         $scope.onSlideMove = function(data) {
         	console.log("slide");
             //alert("You have selected " + data.index + " tab");
         };
+    }
+])
+
+.controller("RecipeCtrl", ['UserHistory', '$scope',
+    function(UserHistory, $scope) {
+        $scope.recipe = UserHistory.get($scope.id);
     }
 ]);

@@ -10,6 +10,7 @@ var app = angular.module('slidebox', ['ionic', 'tabSlideBox','slidebox.services'
 
 
                 console.log("App Loaded!!!");
+
             });
         }
     ]);
@@ -21,8 +22,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
     });
 
     $stateProvider.state('recipe', {
-        url: '/recipe',
-        templateUrl: 'recipe.html'
+        url: '/recipe/:id',
+        templateUrl: 'recipe.html',
+        controller: 'RecipeCtrl'
     });
 
     $stateProvider.state('search', {
