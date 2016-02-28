@@ -5,7 +5,6 @@ angular.module('slidebox.services', [])
 
   var history = [];
   console.log("HISTORY");
-  
   return {
     all: function() {
       return new Promise(function(resolve, reject){
