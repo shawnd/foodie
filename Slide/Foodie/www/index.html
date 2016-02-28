@@ -104,8 +104,8 @@
                           <div class="card">
                             <ion-scroll style="height:100%">
                               <ion-list>
-                                <ion-item>
-                                  Beautiful Favorite Recipe!
+                                <ion-item ng-repeat="favs in uFavorites">
+                                  {{favs.name}}
                                 </ion-item>
                               </ion-list>
                             </ion-scroll>

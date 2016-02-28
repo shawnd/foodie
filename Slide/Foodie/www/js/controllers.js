@@ -1,8 +1,8 @@
 angular.module('slidebox.controllers', [])
 .controller("IndexCtrl", ['$rootScope', "$scope",
-    "$stateParams", "$q", "$location", "$window", '$timeout', 'UserHistory', 'Recipes', '$http',
+    "$stateParams", "$q", "$location", "$window", '$timeout', 'UserHistory', 'Recipes', 'UserFavorites', '$http',
     function($rootScope, $scope, $stateParams, $q, $location, $window,
-        $timeout, UserHistory, Recipes, $http) {
+        $timeout, UserHistory, Recipes, UserFavorites, $http) {
         $scope.tabs = [{
             "text": "History"
         }, {
@@ -16,7 +16,7 @@ angular.module('slidebox.controllers', [])
     	UserHistory.all()
     		.then(function(history){
     			var hist = history;
-    			console.log(hist);
+    			// console.log(hist);
     			var hist_arr = [];
 		    	var rec_arr = Recipes.all();
 		    	for(var i = 0; i < hist.length; i++){
@@ -24,6 +24,20 @@ angular.module('slidebox.controllers', [])
 		    	}
     	    	$scope.uHistory = hist_arr;
     		});
+
+    	UserFavorites.all()
+    		.then(function(favorites){
+    			var favs = favorites;
+    			// console.log(favs);
+    			var favs_arr = [];
+		    	var rec_arr = Recipes.all();
+		    	for(var i = 0; i < favs.length; i++){
+		    		favs_arr.push(rec_arr[favs[i]]);
+		    	}
+		    	// console.log(favs_arr);
+    	    	$scope.uFavorites = favs_arr;
+    		});
+
         $scope.onSlideMove = function(data) {
         	// console.log("slide");
             //alert("You have selected " + data.index + " tab");
