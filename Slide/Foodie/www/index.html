@@ -27,7 +27,7 @@
     </ion-nav-bar>
     <ion-nav-view ng-controller="IndexCtrl"></ion-nav-view>
     <script id="index.html" type="text/ng-template">
-        <ion-view title="FOODIE">
+        <ion-view class="test" title="FOODIE">
 
 
             <ion-nav-buttons side="left">
@@ -58,12 +58,13 @@
                         <div class="recipe-sub-div">
                             <div class="col"></div>
                             <div class="col"></div>
-                            <div class="col recipe-sub-title"> <span> <i class="ion-ios-list-outline" style="margin-left: -137px; margin-top: 46px; font-size: 18px;"></i></span> Current Meal Plan</div>
+                            <div class="col recipe-sub-title"> <span> <i class="ion-ios-list-outline" style="margin-left: -137px; margin-top: 46px; font-size: 18px;"></i></span> Meal History</div>
                         </div>
 
                           <div class="card">
                             <ion-scroll>
                               <ion-list>
+                                <!--<ion-item><div class="row" style="height:60px"></div></ion-itm>-->
                                 <ion-item class="item" style="" ng-repeat="hist in uHistory">                               
                                   <div class="row">
                                     <div class="recipe-plus-button"><i class="icon ion-plus" style="float: left; padding-top: 3px; color: rgb(203, 203, 203); padding-right: 5px;"></i></div>

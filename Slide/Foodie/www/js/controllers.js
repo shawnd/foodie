@@ -25,7 +25,7 @@ angular.module('slidebox.controllers', [])
     	    	$scope.uHistory = hist_arr;
     		});
         $scope.onSlideMove = function(data) {
-        	// console.log("slide");
+        	 console.log("slide");
             //alert("You have selected " + data.index + " tab");
         };
     }
