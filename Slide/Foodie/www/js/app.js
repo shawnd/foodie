@@ -42,7 +42,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'groceries.html',
         controller: 'GroceryCtrl'
     });
-
+    $stateProvider.state('recipelist', {
+        url: '/recipelist',
+        templateUrl: 'recipelist.html'
+    });
     $stateProvider.state('settings', {
         url:'/settings',
         templateUrl: 'settings.html'
