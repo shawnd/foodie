@@ -1,8 +1,8 @@
 angular.module('slidebox.controllers', [])
 .controller("IndexCtrl", ['$rootScope', "$scope",
-    "$stateParams", "$q", "$location", "$window", '$timeout', 'UserHistory', 'Recipes', 'UserFavorites', '$http',
+    "$stateParams", "$q", "$location", "$window", '$timeout', 'UserHistory', 'Recipes', 'UserFavorites', 'Cart', '$http',
     function($rootScope, $scope, $stateParams, $q, $location, $window,
-        $timeout, UserHistory, Recipes, UserFavorites, $http) {
+        $timeout, UserHistory, Recipes, UserFavorites, Cart, $http) {
         $scope.tabs = [{
             "text": "History"
         }, {
@@ -37,6 +37,14 @@ angular.module('slidebox.controllers', [])
 		    	// console.log(favs_arr);
     	    	$scope.uFavorites = favs_arr;
     		});
+
+        $scope.uCart = Cart.all();
+
+        $scope.addItem = function(index){
+            Cart.add(index);
+        }
+
+
 
         $scope.onSlideMove = function(data) {
         	 console.log("slide");

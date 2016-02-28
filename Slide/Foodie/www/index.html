@@ -67,7 +67,7 @@
                                 <!--<ion-item><div class="row" style="height:60px"></div></ion-itm>-->
                                 <ion-item class="item" style="" ng-repeat="hist in uHistory">                               
                                   <div class="row">
-                                    <div class="recipe-plus-button"><i class="icon ion-plus" style="float: left; padding-top: 3px; color: rgb(203, 203, 203); padding-right: 5px;"></i></div>
+                                    <a ng-click="addItem(hist.index)" class="recipe-plus-button"><i class="icon ion-plus" style="float: left; padding-top: 3px; color: rgb(203, 203, 203); padding-right: 5px;"></i></a>
                                     <a class="col col-75 recipe-link" href="#/recipe/{{hist.index}}"><h2 class="recipe-title">{{hist.name}}</h2><p class="recipe-time">{{hist.totalTime}} | {{hist.ingredientArrayName[0]}} {{hist.ingredientArrayName[1]}} {{hist.ingredientArrayName[2]}}</p></a>
                                     <div class="recipe-price">
                                           ${{hist.totalPrice}}
@@ -94,7 +94,7 @@
                             </a>
                               <ion-scroll>
                                 <ion-list>
-                                  <ion-item href="#/recipe">
+                                  <ion-item href="#/recipe" ng-repeat="item in uCart">
                                     The most beautiful recipe of all time.
                                   </ion-item>
                                 </ion-list>
@@ -115,8 +115,14 @@
                           <div class="card">
                             <ion-scroll style="height:100%">
                               <ion-list>
-                                <ion-item ng-repeat="favs in uFavorites">
-                                  {{favs.name}}
+                                <ion-item class="item" style="" ng-repeat="favs in uFavorites">                               
+                                  <div class="row">
+                                    <a ng-click="addItem(favs.index)" class="recipe-plus-button"><i class="icon ion-plus" style="float: left; padding-top: 3px; color: rgb(203, 203, 203); padding-right: 5px;"></i></a>
+                                    <a class="col col-75 recipe-link" href="#/recipe/{{favs.index}}"><h2 class="recipe-title">{{favs.name}}</h2><p class="recipe-time">{{favs.totalTime}} | {{favs.ingredientArrayName[0]}} {{favs.ingredientArrayName[1]}} {{favs.ingredientArrayName[2]}}</p></a>
+                                    <div class="recipe-price">
+                                          ${{favs.totalPrice}}
+                                    </div>
+                                  </div>
                                 </ion-item>
                               </ion-list>
                             </ion-scroll>
