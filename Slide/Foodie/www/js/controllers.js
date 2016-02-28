@@ -58,4 +58,31 @@ angular.module('slidebox.controllers', [])
     	console.log($stateParams.id);
         $scope.recipe = Recipes.get($stateParams.id);
     }
+])
+
+.controller("GroceryCtrl", ['Recipes', 'Cart', 'Ingredients', '$scope', 
+    function(Recipes, Cart, Ingredients, $scope){
+        console.log("GROCERY");
+        var cartItems = Cart.all();
+        var recipes = Recipes.all();
+        var ingred_list = Ingredients.all();
+        var ingredients;
+        var ingredient_amt;
+        var in_arr = {};
+        var estimatedCost = 0;
+        // console.log(recipes[cartItems[0]]["ingredientArrayName"]);
+        for(var i=0; i<cartItems.length; i++){
+            ingredients = (recipes[cartItems[i]]["ingredientArrayName"]);
+            ingredient_amt = (recipes[cartItems[i]]["ingredientArrayAmount"]);
+            for(var j=0; j<ingredients.length; j++){
+                in_arr[ingredients[j]] = ingredient_amt[j];
+                estimatedCost += ingred_list[ingredients[j]];
+            }
+        }
+
+
+        console.log(in_arr);
+        $scope.uIngredients = in_arr;
+        $scope.estimatedCost = estimatedCost;
+    }
 ]);

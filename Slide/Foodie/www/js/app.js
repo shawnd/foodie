@@ -39,7 +39,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
     $stateProvider.state('grocerylist', {
         url: '/grocerylist',
-        templateUrl: 'groceries.html'
+        templateUrl: 'groceries.html',
+        controller: 'GroceryCtrl'
     });
 
     $stateProvider.state('settings', {

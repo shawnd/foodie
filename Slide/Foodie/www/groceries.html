@@ -1,10 +1,13 @@
 <ion-view>
   <ion-content scroll="false">
-      <ion-list>
-      <ion-checkbox>Ketchup</ion-checkbox>
-      <ion-checkbox>Mustard</ion-checkbox>
-      <ion-checkbox>Relish</ion-checkbox> 
-      <ion-checkbox>Sriracha</ion-checkbox> 
-    </ion-list>
+  	<img class="item full-image" src="https://upload.wikimedia.org/wikipedia/en/f/f2/Real_Canadian_Superstore_Logo.jpg"/>
+  	<ion-item>APPROXIMATE TOTAL COST: ${{estimatedCost}}</ion-item>
+  	<ion-scroll height="100%">
+	  	<ion-list>
+	  		<ion-checkbox ng-repeat="(key, value) in uIngredients">
+	  			<span>{{value}} {{key}}</span>
+	  		</ion-checkbox>
+		</ion-list>
+	</ion-scroll>
   </ion-content>
 </ion-view>
