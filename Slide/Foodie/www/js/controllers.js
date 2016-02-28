@@ -38,7 +38,17 @@ angular.module('slidebox.controllers', [])
     	    	$scope.uFavorites = favs_arr;
     		});
 
-        $scope.uCart = Cart.all();
+        // $scope.uCart = Cart.all();
+        var arr_cart = Cart.all();
+        var cartData = [];
+        var recipes = Recipes.all();
+        var totalPrice = 0;
+        for(var i = 0; i < arr_cart.length; i++){
+            cartData.push(recipes[arr_cart[i]]);
+            totalPrice += recipes[arr_cart[i]].totalPrice;
+        }
+        $scope.uCart = cartData;
+        $scope.totalPrice = totalPrice;
 
         $scope.addItem = function(index){
             Cart.add(index);
