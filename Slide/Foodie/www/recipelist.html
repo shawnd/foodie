@@ -18,15 +18,15 @@
         </ion-item>
         <ion-item>
           <div ng-repeat="r in result" class="row">
-            <div class="col col-50">
+            <a class="col col-50" href="#/recipe/{{r.a.index}}">
 
               <div class="recipe-list-info">
                 <div class="recipe-name">{{r.a.name}}</div>
                 <div class="recipe-price-list">${{r.a.totalPrice}}</div>
               </div>
               <img class="full-image recipe-img" ng-src="http://{{r.a.imageUrl}}">
-            </div>
-            <div class="col col-50">
+            </a>
+            <a class="col col-50" href="#/recipe/{{r.b.index}}">
               <div class="recipe-list-info">
                 <div class="recipe-name">{{r.b.name}}</div>
                 <div class="recipe-price-list">${{r.b.totalPrice}}</div>
@@ -34,7 +34,7 @@
 
               <img class="full-image recipe-img" ng-src="http://{{r.b.imageUrl}}">
 
-            </div>
+            </a>
           </div>
         </ion-item>
       </ion-list>
