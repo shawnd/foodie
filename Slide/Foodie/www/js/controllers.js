@@ -60,7 +60,7 @@ angular.module('slidebox.controllers', [])
     }
 ])
 
-.controller("GroceryCtrl", ['Recipes', 'Cart', 'Ingredients', '$scope', 
+.controller("GroceryCtrl", ['Recipes', 'Cart', 'Ingredients', '$scope',
     function(Recipes, Cart, Ingredients, $scope){
         console.log("GROCERY");
         var cartItems = Cart.all();
@@ -100,10 +100,13 @@ angular.module('slidebox.controllers', [])
 
     console.log(budget);
     var recipes = Recipes.all();
-    var result = []
-    for (var i= 0, n=recipes.length; i<n; i++){
+    var result = [];
+    for (var i= 0, n=recipes.length; i<n; i+=2){
       if (recipes[i].totalPrice < budget && recipes[i].totalPrice != 0) {
-        result.push(recipes[i]);
+        result.push({
+          a:recipes[i],
+          b:recipes[i+1]
+        });
       }
     }
 
