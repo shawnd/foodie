@@ -86,3 +86,12 @@
 .recipe-img{
      -webkit-filter: brightness(40%); 
 }
+
+.recipe-list-info{
+        z-index: 1;
+    position: absolute;
+    color: white;
+    margin-left: 12%;
+    margin-top: 13%;
+
+}
