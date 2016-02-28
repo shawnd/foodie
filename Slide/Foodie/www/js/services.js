@@ -5,7 +5,7 @@ angular.module('slidebox.services', [])
 
   var history = [];
   console.log("HISTORY");
-  $http({method: 'GET', url: 'http://api.servequake.com:8080/getHistory'}).success(function(data, status, headers, config) {
+  $http({method: 'GET', url: 'http://localhost:8080/getHistory'}).success(function(data, status, headers, config) {
     console.log(data);
     for(var i = 0; i < data.length; i++){
       history.push(data[i].data);
