@@ -42,7 +42,7 @@
 
             <ion-content scroll="false">
 
-                <tab-slide-box tab="0">
+                <tab-slide-box tab="1">
                     <div class="tsb-icons" hidden="true">
                         <div class="tsb-ic-wrp">
 
@@ -62,7 +62,7 @@
                         </div>
 
                           <div class="card">
-                            <ion-scroll>
+                            <ion-scroll height="100%">
                               <ion-list>
                                 <!--<ion-item><div class="row" style="height:60px"></div></ion-itm>-->
                                 <ion-item class="item" style="" ng-repeat="hist in uHistory">                               
@@ -87,21 +87,26 @@
                             <div class="col recipe-sub-title"> <span> <i class="ion-ios-list-outline" style="margin-left: -137px; margin-top: 46px; font-size: 18px;"></i></span> Current Meal List</div>
                         </div>
                           <div class="card">
-                            <a href="#/search" class="item item-icon-left">
+                            <a href="#/recipelist" class="item item-icon-left">
                               <i class="icon ion-plus" style="color:#74CF66 !important;    font-size: 22px;"></i>
                               <div style="color:#74CF66 !important;font-weight:bold;text-align:left;">Add a meal</div>
                               <div class="badge badge-clear" style="color:#74CF66;">Budget $20</div>
                             </a>
                               <ion-scroll>
                                 <ion-list>
-                                  <ion-item href="#/recipe" ng-repeat="item in uCart">
-                                    The most beautiful recipe of all time.
-                                  </ion-item>
-                                  <ion-item>
-                                    <div class="recipe-total"><div style="text-align:left;float:left;">Total:</div> <div style="text-align:right">$0.00</div></div>
-                                  </ion-item>
                                 </ion-list>
+                                <ion-item  href="#/recipe/{{item.index}}" class="item" style="" ng-repeat="item in uCart">                               
+                                  <div class="row">
+                                    <a class="col col-75 recipe-link" href="#/recipe/{{item.index}}"><h2 class="recipe-title">{{item.name}}</h2><p class="recipe-time">{{item.totalTime}} | {{item.ingredientArrayName[0]}} {{item.ingredientArrayName[1]}} {{item.ingredientArrayName[2]}}</p></a>
+                                    <div class="recipe-price">
+                                          ${{item.totalPrice}}
+                                    </div>
+                                  </div>
+                                </ion-item>
                               </ion-scroll>
+                              <ion-item>
+                                    <div class="recipe-total"><div style="text-align:left;float:left;">Total:</div> <div style="text-align:right">${{totalPrice}}</div></div>
+                                  </ion-item>
                             </div>
                             <a class="button button-block button-positive grocery-button" href="#/grocerylist">
                               <span><i class="ion-ios-cart-outline" style="padding-right:15px"></i></span>CREATE GROCERY LIST

@@ -38,7 +38,17 @@ angular.module('slidebox.controllers', [])
     	    	$scope.uFavorites = favs_arr;
     		});
 
-        $scope.uCart = Cart.all();
+        // $scope.uCart = Cart.all();
+        var arr_cart = Cart.all();
+        var cartData = [];
+        var recipes = Recipes.all();
+        var totalPrice = 0;
+        for(var i = 0; i < arr_cart.length; i++){
+            cartData.push(recipes[arr_cart[i]]);
+            totalPrice += recipes[arr_cart[i]].totalPrice;
+        }
+        $scope.uCart = cartData;
+        $scope.totalPrice = totalPrice;
 
         $scope.addItem = function(index){
             Cart.add(index);
@@ -60,7 +70,7 @@ angular.module('slidebox.controllers', [])
     }
 ])
 
-.controller("GroceryCtrl", ['Recipes', 'Cart', 'Ingredients', '$scope',
+.controller("GroceryCtrl", ['Recipes', 'Cart', 'Ingredients', '$scope', 
     function(Recipes, Cart, Ingredients, $scope){
         console.log("GROCERY");
         var cartItems = Cart.all();
@@ -93,6 +103,8 @@ angular.module('slidebox.controllers', [])
         $scope.recipe = Recipes.get($stateParams.id);
     }
 ])
+
+
 
 .controller("RecipeListCtrl", ['Recipes', '$scope', '$stateParams',
   function(Recipes, $scope, $stateParams) {
