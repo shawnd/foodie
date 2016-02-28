@@ -12,21 +12,39 @@ angular.module('slidebox.services', [])
           console.log(data);
           history = data.split(',');
           resolve(history);
-          // console.log(history);
         });
 
       });
-      //return history;
     },
     remove: function(chat) {
       history.splice(history.indexOf(chat), 1);
     },
     get: function(Id) {
-      // for(int i = 0; i < history.length; i++){
-      //   console.log(Id);
-      //   if(history[i]."$$hashkey" == Id)
         return history[Id];
-      // }
+    }
+  };
+})
+
+.factory('UserFavorites', function($http) {
+  // Might use a resource here that returns a JSON array
+
+  var favorites = [];
+  console.log("FAVORITES");
+  return {
+    all: function() {
+      return new Promise(function(resolve, reject){
+        $http({method: 'GET', url: 'http://api.servequake.com:8080/getHistory'}).success(function(data, status, headers, config) {
+          console.log(data);
+          favorites = data.split(',');
+          resolve(favorites);
+        });
+      });
+    },
+    remove: function(chat) {
+      history.splice(history.indexOf(chat), 1);
+    },
+    get: function(Id) {
+      return favorites[Id];
     }
   };
 })
